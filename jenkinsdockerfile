@@ -1,11 +1,14 @@
 pipeline {
   agent {
-    docker  { image 'node:16-alpine' }
+      label 'slave'
+    
   }
   stages {
-    stage('Test') {
+    stage('Hello') {
       steps {
-        sh 'node --version'
+        sh 'java --version'
+        echo 'get working directory'
+        sh 'pwd'
       }
     }
   }
