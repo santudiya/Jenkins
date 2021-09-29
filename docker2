@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { image 'ubuntu:latest' }
+    docker { image 'jenkins:slave' }
   }
  environment {
                 var1 = "test_password"
