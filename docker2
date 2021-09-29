@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { image 'jenkins/slave' }
+    docker { image 'ubuntu:latest' }
   }
   stages {
     stage('Test') {
