@@ -2,16 +2,16 @@ pipeline {
   agent {
     docker { image 'centos:latest' }
   }
- environment {
-                var1 = "test_password"
+  stages {
+        stage('Hello') {
+            environment {
+                Santu_Username = credentials ('JENKINS-USERNAME')
+                
             }
-
-    stages {
-        stage('My Environment Pipeline') {
-            
             steps {
-                sh "echo 'this is my first environment $var1'"
+                sh "echo 'My Github Token is $Santu_Username'"
+                sh "echo 'My Username is $Santu_Username_USR'"
+                sh "echo 'My Password is $Santu_Username_PSW'"
             }
         }
-    }
     }
