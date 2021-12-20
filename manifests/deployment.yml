@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: santudiyajenkins 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: santudiyajenkins
+  template:
+    metadata:
+      labels:
+        app: santudiyajenkins 
+    spec:
+      containers:
+        - name: santudiyajenkins 
+          image: santutest.azurecr.io/santudiyajenkins
+          ports:
+          - containerPort: 80
